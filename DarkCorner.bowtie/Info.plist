@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BTArtworkFunction</key>
+	<string>artworkUpdate</string>
+	<key>BTArtworkHeight</key>
+	<integer>32</integer>
+	<key>BTArtworkWidth</key>
+	<integer>32</integer>
+	<key>BTMainFile</key>
+	<string>index.html</string>
+	<key>BTStatusFunction</key>
+	<string>playerUpdate</string>
+	<key>BTThemeArtist</key>
+	<string>i10k</string>
+	<key>BTThemeIdentifier</key>
+	<string>com.i10k.DarkCorner</string>
+	<key>BTThemeName</key>
+	<string>DarkCorner</string>
+	<key>BTThemePreviewImage</key>
+	<string>preview.png</string>
+	<key>BTTrackFunction</key>
+	<string>trackUpdate</string>
+	<key>BTPlayStateFunction</key>
+	<string>playStateUpdate</string>
+	<key>BTReadyFunction</key>
+	<string>themeReady</string>
+	<key>BTWindowHeight</key>
+	<integer>42</integer>
+	<key>BTWindowMode</key>
+	<string>desktop</string>
+	<key>BTWindowWidth</key>
+	<integer>300</integer>
+	<key>BTThemeVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
