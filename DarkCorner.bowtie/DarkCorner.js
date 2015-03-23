@@ -15,11 +15,11 @@ template =
 		'</div>' +
 	'</div>';
 
-function render(title, album, artist) {
+function render(title, artist, album) {
 	return template
 		.replace('{{title}}', title || 'Nothing')
-		.replace('{{album}}', album || 'is playing')
-		.replace('{{artist}}', artist || '');
+		.replace('{{artist}}', artist || 'is playing')
+		.replace('{{album}}', album || '');
 }
 
 function themeReady() {
@@ -41,20 +41,25 @@ function trackUpdate(track){
 	var title = track.propertyHTML('title');
 	var artist = track.propertyHTML('artist');
 	var album = track.propertyHTML('album');
-	var art = track.propertyHTML('art');
 
 	if (container) {
 		(function (oldContainer) {
 			oldContainer.classList.add('hide');
-			oldContainer.addEventListener('transitionend', function () {
-				wrap.removeChild(oldContainer);
-			});
+
+			var handleTransitionend = function (event) {
+				if (event.target === oldContainer) {
+					oldContainer.removeEventListener('transitionend', handleTransitionend);
+					wrap.removeChild(oldContainer);
+				}
+			};
+
+			oldContainer.addEventListener('transitionend', handleTransitionend);
 		}(container));
 	}
 
 	container = document.createElement('div');
 	container.className = 'container';
-	container.innerHTML = render(title, artist, album, art);
+	container.innerHTML = render(title, artist, album);
 
 	wrapTest.appendChild(container);
 	var newWidth = container.clientWidth + 1;
